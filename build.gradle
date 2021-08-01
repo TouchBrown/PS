@@ -43,7 +43,7 @@ dlDepsDirS.mkdirs()
 
 def dlDepsC = [
 	new Tuple(
-		'https://yivesmirror.com/files/paperspigot/PaperSpigot-1.12.2-b1421.jar',
+		'https://papermc.io/ci/job/Paper/lastSuccessfulBuild/artifact/paperclip-1618.jar',
 		'spigot-1.12.2-2.jar'
 	),
 	new Tuple(
@@ -126,7 +126,7 @@ task generateLocaleList(type: DefaultTask) {doLast{
 			if (split.length == 2 && split[1].equals("lang")) {
 				writer.println(split[0])
 			}
-		})		
+		})
 	})
 }}
 

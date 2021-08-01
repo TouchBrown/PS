@@ -5,6 +5,7 @@ import protocolsupport.api.ProtocolVersion;
 import protocolsupport.protocol.packet.middle.serverbound.play.MiddleInventoryClick;
 import protocolsupport.protocol.serializer.ItemStackSerializer;
 import protocolsupport.protocol.utils.types.WindowType;
+import protocolsupport.zplatform.itemstack.ItemStackWrapper;
 
 public class InventoryClick extends MiddleInventoryClick {
 
@@ -26,6 +27,9 @@ public class InventoryClick extends MiddleInventoryClick {
 		actionNumber = clientdata.readShort();
 		mode = clientdata.readUnsignedByte();
 		itemstack = ItemStackSerializer.readItemStack(clientdata, version, cache.getAttributesCache().getLocale(), true);
+		if (button == 0 && mode == 1) {
+			itemstack = ItemStackWrapper.NULL;
+		}
 	}
 
 }
